@@ -452,7 +452,7 @@ $('#filter-type').on('click', function () {
         <button class="btn btn-detalles btn-view" id=${element["N°"]}>
         Ver detalles
         </button>
-        <button class="btn btn-pdf text-blue-miranda"> Ver PDF
+        <button class="btn btn-pdf text-blue-miranda" data-el=${element["N°"]}> Ver PDF
         </button>
       </div>
     </div>
