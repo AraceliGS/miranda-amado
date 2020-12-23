@@ -76,7 +76,7 @@ info.on('value', function (datos) {
         <button class="btn btn-detalles btn-view" id=${element["N°"]}>
         Ver detalles
         </button>
-        <button class="btn btn-pdf text-blue-miranda"> Ver PDF
+        <button class="btn btn-pdf text-blue-miranda" data-el=${element["N°"]}> Ver PDF
         </button>
       </div>
     </div>
@@ -90,6 +90,11 @@ info.on('value', function (datos) {
 
         $('.card-body').click(function () {
           window.open(`${element.URL}`, '_blank');
+        });
+
+        $('.btn-pdf').click(function () {
+          if($(this).attr("data-el") == (index+1))
+            window.open(`${element.URL}`, '_blank');
         });
       })
     });
