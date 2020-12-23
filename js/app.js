@@ -464,7 +464,8 @@ $('#filter-type').on('click', function () {
   
       $('#container-box').append(tem);
       $('.btn-pdf').click(function () {
-        window.open(`${element.URL}`, '_blank');
+        if($(this).attr("data-el") == (index+1))
+          window.open(`${element.URL}`, '_blank');
       });
     });
   }
@@ -492,7 +493,7 @@ $('#filter-type').on('click', function () {
         <button class="btn btn-detalles btn-view" id=${element["N°"]}>
         Ver detalles
         </button>
-        <button class="btn btn-pdf text-blue-miranda"> Ver PDF
+        <button class="btn btn-pdf text-blue-miranda" data-el=${element["N°"]}> Ver PDF
         </button>
       </div>
     </div>
@@ -505,7 +506,8 @@ $('#filter-type').on('click', function () {
 
     $('#container-box').append(tem);
     $('.btn-pdf').click(function () {
-      window.open(`${element.URL}`, '_blank');
+      if($(this).attr("data-el") == (index+1))
+        window.open(`${element.URL}`, '_blank');
     });
     });
   }
@@ -534,7 +536,7 @@ $('#filter-type').on('click', function () {
         <button class="btn btn-detalles btn-view" id=${element["N°"]}>
         Ver detalles
         </button>
-        <button class="btn btn-pdf text-blue-miranda"> Ver PDF
+        <button class="btn btn-pdf text-blue-miranda" data-el=${element["N°"]}> Ver PDF
         </button>
       </div>
     </div>
@@ -547,7 +549,8 @@ $('#filter-type').on('click', function () {
   
       $('#container-box').append(template2);
       $('.btn-pdf').click(function () {
-        window.open(`${element.URL}`, '_blank');
+        if($(this).attr("data-el") == (index+1))
+          window.open(`${element.URL}`, '_blank');
       });
     });
   }
@@ -574,7 +577,7 @@ $('#filter-type').on('click', function () {
         <button class="btn btn-detalles btn-view" id=${element["N°"]}>
         Ver detalles
         </button>
-        <button class="btn btn-pdf text-blue-miranda"> Ver PDF
+        <button class="btn btn-pdf text-blue-miranda" data-el=${element["N°"]}> Ver PDF
         </button>
       </div>
     </div>
@@ -587,7 +590,8 @@ $('#filter-type').on('click', function () {
 
     $('#container-box').append(tem);
     $('.btn-pdf').click(function () {
-      window.open(`${element.URL}`, '_blank');
+      if($(this).attr("data-el") == (index+1))
+        window.open(`${element.URL}`, '_blank');
     });
     });
   }
@@ -615,7 +619,7 @@ $('#filter-type').on('click', function () {
         <button class="btn btn-detalles btn-view" id=${element["N°"]}>
         Ver detalles
         </button>
-        <button class="btn btn-pdf text-blue-miranda"> Ver PDF
+        <button class="btn btn-pdf text-blue-miranda" data-el=${element["N°"]}> Ver PDF
         </button>
       </div>
     </div>
