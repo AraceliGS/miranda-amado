@@ -15,7 +15,7 @@ let info = database.ref('convenios');
 /*Función para obtener los datos*/
 info.on('value', function (datos) {
   data = datos.val();
-  console.log(data);
+  console.log(Object.keys(data));
   function listEmpresas() {
     let Type = '';
     let ObjectTypes = [];
@@ -122,7 +122,6 @@ function filterSuscription(date) {
 
     data.forEach(function (element) {
       if ((element.Suscripción).toString().substr(0, 4) === date) {
-        // console.log((element.Suscripción).substr(0, 4))
         resultSuscription.push(element);
 
       }
@@ -199,9 +198,9 @@ function filterCompany(company) {
 info.on('value', function (datos) {
   data = datos.val();
   // Mostrar los 20 primeros
-  let news = data.slice(0, 19);
+  let news = data.slice(0, 20);
   
-  news.forEach(element => {
+  news.forEach((element, index) => {
     let fecha = element.Suscripción;
     let fechames = fecha.slice(0, 10);
     let tem = `<div class="col-12 col-lg-4"><div class="container-convenio m-3">
@@ -220,7 +219,7 @@ info.on('value', function (datos) {
       <button class="btn btn-detalles btn-view" id=${element["N°"]}>
       Ver detalles
       </button>
-      <button class="btn btn-pdf text-blue-miranda"> Ver PDF
+      <button class="btn btn-pdf text-blue-miranda" data-el=${element["N°"]}> Ver PDF
       </button>
     </div>
   </div>
@@ -233,7 +232,8 @@ info.on('value', function (datos) {
 
     $('#container-box').append(tem);
     $('.btn-pdf').click(function () {
-      window.open(`${element.URL}`, '_blank');
+      if($(this).attr("data-el") == (index+1))
+        window.open(`${element.URL}`, '_blank');
     });
 
   });
